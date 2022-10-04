@@ -10,11 +10,11 @@ terraform {
 provider "snowflake" {
   // required
   username = "KIMOHR"
-  account  = "RW17552"
+  account  = "rw17552"
   region   = "west-europe.azure"
 
   // optional, at exactly one must be set
-  password = "Brunoerenfingutt01!"
+  password = "uwT6hn2c@PSoi&"
 
   // optional
   role = "ACCOUNTADMIN"
@@ -22,7 +22,7 @@ provider "snowflake" {
 }
 
 resource "snowflake_database" "test1" {
-  name                        = "test1"
-  comment                     = "test comment"
-  data_retention_time_in_days = 3
+  name = "test1"
+  comment = "test comment"
+  data_retention_time_in_days = 1
 }
