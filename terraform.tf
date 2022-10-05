@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    snowflake = {
+    snowflake = {   
       source  = "Snowflake-Labs/snowflake"
       version = "0.46.0"
     }
@@ -21,8 +21,17 @@ provider "snowflake" {
 
 }
 
-resource "snowflake_database" "test1" {
-  name = "test1"
-  comment = "test comment"
+//////////////////////////////////////////////////////////////////////
+// Warehous
+resource "snowflake_warehouse" "w" {
+  name           = "test2"
+  comment        = "foo"
+  warehouse_size = "small"
+}
+
+// Create database
+resource "snowflake_database" "simple" {
+  name                        = "testing"
+  comment                     = "test comment"
   data_retention_time_in_days = 1
 }
